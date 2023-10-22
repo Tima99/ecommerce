@@ -3,7 +3,14 @@ import {
   REMOVE_CART_ITEM,
   SAVE_SHIPPING_INFO,
 } from "../constants/cartConstants";
-import axios from "axios";
+import Axios from "axios";
+// axios.baseUrl = "https://ecom-service-vwki.onrender.com"
+
+
+const axios = Axios.create({
+  baseURL : "https://ecom-service-vwki.onrender.com",
+})
+
 
 // Add to Cart
 export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {

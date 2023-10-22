@@ -36,11 +36,17 @@ import {
   USER_DETAILS_FAIL,
   CLEAR_ERRORS,
 } from "../constants/userConstants";
-import axios from "axios";
+import Axios from "axios";
 
+const axios = Axios.create({
+  baseURL : "https://ecom-service-vwki.onrender.com",
+})
+
+// axios.baseUrl = "http://localhost:4000"
 // Login
 export const login = (email, password) => async (dispatch) => {
   try {
+    console.log(axios.defaults.baseUrl)
     dispatch({ type: LOGIN_REQUEST });
 
     const config = { headers: { "Content-Type": "application/json" } };
