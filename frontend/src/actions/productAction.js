@@ -33,7 +33,9 @@ import Axios from "axios";
 import serverBaseURL from "../constants"
 const axios = Axios.create({
   baseURL : serverBaseURL,
+  withCredentials: true
 })
+
 // Get All Products
 export const getProduct =
   (keyword = "", currentPage = 1, price = [0, 25000], category, ratings = 0) =>

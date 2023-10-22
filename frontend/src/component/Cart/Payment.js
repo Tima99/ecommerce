@@ -21,6 +21,7 @@ import Axios from "axios";
 import serverBaseURL from "../../constants"
 const axios = Axios.create({
   baseURL : serverBaseURL,
+  withCredentials: true
 })
 
 const Payment = ({ history }) => {

@@ -21,9 +21,10 @@ import {
 } from "../constants/orderConstants";
 
 import Axios from "axios";
-
+import serverBaseURL from "../constants"
 const axios = Axios.create({
-  baseURL : "https://ecom-service-vwki.onrender.com",
+  baseURL : serverBaseURL,
+  withCredentials: true
 })
 
 // Create Order
