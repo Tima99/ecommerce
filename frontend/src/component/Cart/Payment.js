@@ -12,12 +12,16 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 
-import axios from "axios";
 import "./payment.css";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { createOrder, clearErrors } from "../../actions/orderAction";
+import Axios from "axios";
+import serverBaseURL from "../../constants"
+const axios = Axios.create({
+  baseURL : serverBaseURL,
+})
 
 const Payment = ({ history }) => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));

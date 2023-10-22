@@ -23,7 +23,6 @@ import ResetPassword from "./component/User/ResetPassword";
 import Cart from "./component/Cart/Cart";
 import Shipping from "./component/Cart/Shipping";
 import ConfirmOrder from "./component/Cart/ConfirmOrder";
-import axios from "axios";
 import Payment from "./component/Cart/Payment";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -42,6 +41,11 @@ import ProductReviews from "./component/Admin/ProductReviews";
 import Contact from "./component/layout/Contact/Contact";
 import About from "./component/layout/About/About";
 import NotFound from "./component/layout/Not Found/NotFound";
+import Axios from "axios";
+import serverBaseURL from "./constants"
+const axios = Axios.create({
+  baseURL : serverBaseURL,
+})
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);

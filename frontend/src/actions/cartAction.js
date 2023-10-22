@@ -6,11 +6,10 @@ import {
 import Axios from "axios";
 // axios.baseUrl = "https://ecom-service-vwki.onrender.com"
 
-
+import serverBaseURL from "../constants"
 const axios = Axios.create({
-  baseURL : "https://ecom-service-vwki.onrender.com",
+  baseURL : serverBaseURL,
 })
-
 
 // Add to Cart
 export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {

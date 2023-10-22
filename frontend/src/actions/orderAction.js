@@ -20,7 +20,11 @@ import {
   CLEAR_ERRORS,
 } from "../constants/orderConstants";
 
-import axios from "axios";
+import Axios from "axios";
+
+const axios = Axios.create({
+  baseURL : "https://ecom-service-vwki.onrender.com",
+})
 
 // Create Order
 export const createOrder = (order) => async (dispatch) => {

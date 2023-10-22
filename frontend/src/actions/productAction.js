@@ -1,5 +1,3 @@
-import axios from "axios";
-
 import {
   ALL_PRODUCT_FAIL,
   ALL_PRODUCT_REQUEST,
@@ -30,7 +28,12 @@ import {
   DELETE_REVIEW_FAIL,
   CLEAR_ERRORS,
 } from "../constants/productConstants";
+import Axios from "axios";
 
+import serverBaseURL from "../constants"
+const axios = Axios.create({
+  baseURL : serverBaseURL,
+})
 // Get All Products
 export const getProduct =
   (keyword = "", currentPage = 1, price = [0, 25000], category, ratings = 0) =>
