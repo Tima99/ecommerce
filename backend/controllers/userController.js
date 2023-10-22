@@ -63,7 +63,7 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
     expires: new Date(Date.now()),
     httpOnly: true,
     sameSite: "none",
-    secure: process.env.NODE_ENV === "PRODUCTION"
+    secure: process.env.NODE_ENV === "PRODUCTION" ? true : false
   });
 
   res.status(200).json({
