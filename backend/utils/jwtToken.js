@@ -3,6 +3,7 @@
 const sendToken = (user, statusCode, res) => {
   const token = user.getJWTToken();
   const cookieExpire = process.env.COOKIE_EXPIRE || 5
+  console.log(token)
 
   // options for cookie
   const options = {
@@ -13,8 +14,11 @@ const sendToken = (user, statusCode, res) => {
     sameSite: "none",
     secure: process.env.NODE_ENV === "PRODUCTION" ? true : false
   };
+  console.log(options)
 
-  res.status(statusCode).cookie("token", token, options).json({
+  res.cookie("token", token, options)
+
+  res.status(statusCode).json({
     success: true,
     user,
     token,
