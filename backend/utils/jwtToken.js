@@ -7,9 +7,9 @@ const sendToken = (user, statusCode, res) => {
 
   // options for cookie
   const options = {
-    maxAge: new Date(
+    maxAge: (new Date(
       Date.now() +  cookieExpire * 24 * 60 * 60 * 1000
-    ),
+    )).getTime(),
     httpOnly: true,
     sameSite: "none",
     secure: process.env.NODE_ENV === "PRODUCTION" ? true : false

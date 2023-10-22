@@ -60,7 +60,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 // Logout User
 exports.logout = catchAsyncErrors(async (req, res, next) => {
   res.cookie("token", null, {
-    maxAge: new Date(Date.now()),
+    maxAge: (new Date(Date.now())).getTime(),
     httpOnly: true,
     sameSite: "none",
     secure: process.env.NODE_ENV === "PRODUCTION" ? true : false
